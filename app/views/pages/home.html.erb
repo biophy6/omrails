@@ -1,16 +1,26 @@
-<h1>Welcome to One Month Rails</h1>
-<p>
-	Blah blah blah blizzidy blah.
-	This is the homepage.
-	<%= link_to "One Month Rails", "http://onemonthrails.com"%>	
-</p>
+<% if user_signed_in? %>
+<div class="hero-unit">
+	<h1>You're logged in!</h1>
+	<p>
+		Blah blah blah blizzidy blah.
+		This is the member's homepage.
+	</p>
+</div>
 
+<% else %>	
+<div class="hero-unit">
+	<h1>Welcome to One Month Rails</h1>
+	<p>
+		Blah blah blah blizzidy blah.
+		This is the homepage.
+		<%= link_to "One Month Rails", "http://onemonthrails.com"%>	
+	</p>
 
-<p>
-   <%= link_to "Sign up Now!", "#"%>
-</p>
+	<p>
+	   <%= link_to "Sign up Now!", new_user_registration_path, class: "btn btn-primary btn large"%>
+	</p>
+</div>
 
-
-
+<% end %>
 
 
