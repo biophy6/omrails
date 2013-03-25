@@ -1,6 +1,9 @@
 Omrails::Application.routes.draw do
 
 
+  resources :cts
+
+
   resources :pins
 
 
