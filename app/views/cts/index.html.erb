@@ -1,21 +1,3 @@
-<h1>Listing Images</h1>
-
-<table class="table table-striped">
-	<thead>
-	  <tr>
-		<th>Image</th>
-	    <th>Description</th>
-	    <th></th>
-	    <th></th>
-	    <th></th>
-	  </tr>
-	</thead>
-
-	<tbody>
-		<%= render @cts %>
-	</tbody>
-</table>
-
-<br />
-
-<%= link_to 'New Ct', new_ct_path %>
+<div id="cts">
+    <%= render @cts %>
+</div>
