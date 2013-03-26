@@ -1,4 +1,6 @@
 class CtsController < ApplicationController
+before_filter :authenticate_user!, except: [:index]
+
   # GET /cts
   # GET /cts.json
   def index
@@ -24,7 +26,7 @@ class CtsController < ApplicationController
   # GET /cts/new
   # GET /cts/new.json
   def new
-    @ct = Ct.new
+    @ct = current_user.cts.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +36,13 @@ class CtsController < ApplicationController
 
   # GET /cts/1/edit
   def edit
-    @ct = Ct.find(params[:id])
+    @ct = current_user.cts.find(params[:id])
   end
 
   # POST /cts
   # POST /cts.json
   def create
-    @ct = Ct.new(params[:ct])
+    @ct = current_user.cts.new(params[:ct])
 
     respond_to do |format|
       if @ct.save
@@ -56,7 +58,7 @@ class CtsController < ApplicationController
   # PUT /cts/1
   # PUT /cts/1.json
   def update
-    @ct = Ct.find(params[:id])
+    @ct = current_user.cts.find(params[:id])
 
     respond_to do |format|
       if @ct.update_attributes(params[:ct])
@@ -72,7 +74,7 @@ class CtsController < ApplicationController
   # DELETE /cts/1
   # DELETE /cts/1.json
   def destroy
-    @ct = Ct.find(params[:id])
+    @ct = current_user.cts.find(params[:id])
     @ct.destroy
 
     respond_to do |format|

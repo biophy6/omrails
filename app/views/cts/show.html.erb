@@ -4,8 +4,13 @@
 			<p>
 			  <%= @ct.description %>
 			</p>
-			<%= link_to 'Edit', edit_ct_path(@ct) %> |
-			<%= link_to 'Back', cts_path %>
+			<p>
+			  <%= @ct.user.name %>
+			</p>
+			<% if current_user == @ct.user %>
+				<%= link_to 'Edit', edit_ct_path(@ct) %> |
+			<% end %>	
+				<%= link_to 'Back', cts_path %>
 		</div>	
 	</div>	
 </div>
