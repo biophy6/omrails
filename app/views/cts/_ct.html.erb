@@ -1,4 +1,5 @@
 <tr>
+  <td><%= image_tag ct.image(:medium) %></td>	
   <td><%= ct.description %></td>
   <td><%= link_to 'Show', ct %></td>
 	<% if current_user == ct.user %>

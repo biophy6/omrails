@@ -4,9 +4,6 @@ Omrails::Application.routes.draw do
   resources :cts
 
 
-  resources :pins
-
-
   devise_for :users
 
 get 'about' => 'pages#about'
